@@ -1,0 +1,26 @@
+// Write a program to Print Armstrong numbers in a range.
+#include <stdio.h>
+
+int main()
+{
+    int s, e, sum = 0, r;
+    printf("Enter the range :\n");
+    scanf("%d%d", &s, &e);
+    for (int i = s; i <= e; i++)
+    {
+        int temp = i;
+        while (temp > 0)
+        {
+            r = temp % 10;
+            sum = sum + (r * r * r);
+            temp = temp / 10;
+        }
+        if (i == sum)
+        {
+            printf("The number %d is Armstrong Number\n", i);
+        }
+        sum = 0;
+    }
+
+    return 0;
+}
